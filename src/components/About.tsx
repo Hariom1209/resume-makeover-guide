@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
@@ -23,7 +22,7 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
           <div>
             <img
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop&crop=face"
+              src="/lovable-uploads/aafc0657-a90e-41c0-802e-f5ea91b31bfc.png"
               alt="Hariom Kumar"
               className="rounded-lg shadow-lg w-full max-w-md mx-auto"
             />

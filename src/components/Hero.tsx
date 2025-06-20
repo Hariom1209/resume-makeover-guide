@@ -23,6 +23,15 @@ const Hero = () => {
     <section id="home" className="min-h-screen flex items-center justify-center pt-16 bg-gradient-to-br from-background via-background to-muted/30">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in">
+          {/* Profile Image */}
+          <div className="mb-8">
+            <img
+              src="/lovable-uploads/aafc0657-a90e-41c0-802e-f5ea91b31bfc.png"
+              alt="Hariom Kumar"
+              className="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto mb-6 shadow-lg border-4 border-primary/20"
+            />
+          </div>
+
           {/* Status Badge */}
           <div className="mb-8">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-green-800 text-sm font-medium border border-green-200">
