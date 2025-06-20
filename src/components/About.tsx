@@ -1,7 +1,15 @@
 
 import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 const About = () => {
+  const highlights = [
+    "Led development of 3 major product launches",
+    "Mentored 10+ junior developers",
+    "Increased application performance by 40%",
+    "Built applications serving 100K+ users"
+  ];
+
   return (
     <section id="about" className="py-20 bg-muted/50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -12,7 +20,7 @@ const About = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
           <div>
             <img
               src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop&crop=face"
@@ -26,14 +34,15 @@ const About = () => {
               <CardContent className="p-8">
                 <h3 className="text-2xl font-semibold mb-4">My Story</h3>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
-                  I'm a passionate developer with over 5 years of experience in creating 
+                  I'm a passionate developer with over 5 years of experience creating 
                   web applications that solve real-world problems. My journey started with 
                   curiosity about how websites work, and it has evolved into a love for 
-                  crafting seamless user experiences.
+                  crafting seamless user experiences and scalable architectures.
                 </p>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
-                  When I'm not coding, you can find me exploring new technologies, 
-                  contributing to open-source projects, or enjoying a good book with a cup of coffee.
+                  Currently working as a Senior Full Stack Developer at TechCorp, where I lead 
+                  a team of developers building cutting-edge SaaS applications. I specialize in 
+                  React, Node.js, and cloud technologies, with a strong focus on user experience and performance.
                 </p>
                 <div className="grid grid-cols-2 gap-4 text-center">
                   <div>
@@ -49,6 +58,39 @@ const About = () => {
             </Card>
           </div>
         </div>
+
+        {/* Career Highlights */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-semibold mb-8 text-center">Career Highlights</h3>
+          <div className="grid md:grid-cols-2 gap-4">
+            {highlights.map((highlight, index) => (
+              <div key={index} className="flex items-center space-x-3 p-4 bg-background rounded-lg shadow-sm">
+                <div className="w-2 h-2 bg-primary rounded-full"></div>
+                <span className="text-muted-foreground">{highlight}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Personal Interests */}
+        <Card>
+          <CardContent className="p-8 text-center">
+            <h3 className="text-2xl font-semibold mb-4">Beyond Code</h3>
+            <p className="text-muted-foreground mb-6 leading-relaxed">
+              When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, 
+              photography, hiking in nature, or enjoying a good book with a cup of coffee. I believe in continuous 
+              learning and staying curious about the world around us.
+            </p>
+            <div className="flex flex-wrap justify-center gap-2">
+              <Badge variant="secondary">Photography</Badge>
+              <Badge variant="secondary">Hiking</Badge>
+              <Badge variant="secondary">Open Source</Badge>
+              <Badge variant="secondary">Coffee Enthusiast</Badge>
+              <Badge variant="secondary">Tech Blogs</Badge>
+              <Badge variant="secondary">Mentoring</Badge>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </section>
   );
