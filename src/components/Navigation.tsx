@@ -10,8 +10,8 @@ const Navigation = () => {
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
     { name: "Skills", href: "#skills" },
-    { name: "Experience", href: "#experience" },
     { name: "Projects", href: "#projects" },
+    { name: "Services", href: "#services" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -27,7 +27,7 @@ const Navigation = () => {
     <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md z-50 border-b">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <div className="text-2xl font-bold text-primary">Alex Johnson</div>
+          <div className="text-2xl font-bold text-primary">Hariom Kumar</div>
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
