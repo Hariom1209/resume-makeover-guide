@@ -1,3 +1,4 @@
+
 import { ArrowDown, Github, Linkedin, Mail, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import jsPDF from 'jspdf';
@@ -14,7 +15,7 @@ const Hero = () => {
     try {
       const pdf = new jsPDF({
         orientation: 'portrait',
-        unit: 'mm',
+        unit: 'mm', 
         format: 'a4'
       });
       
@@ -54,8 +55,18 @@ const Hero = () => {
       pdf.text("   - Python-based application using NLTK and machine learning", 25, 290);
       pdf.text("   - Intelligent email classification system", 25, 300);
       
-      // Save the PDF with proper configuration
-      pdf.save('Hariom_Kumar_Resume.pdf');
+      // Create blob and download link
+      const pdfBlob = pdf.output('blob');
+      const url = URL.createObjectURL(pdfBlob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'Hariom_Kumar_Resume.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+      
+      console.log('PDF downloaded successfully');
     } catch (error) {
       console.error('Error generating PDF:', error);
       alert('There was an error generating the PDF. Please try again.');
