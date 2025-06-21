@@ -1,4 +1,3 @@
-
 import { ArrowDown, Github, Linkedin, Mail, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -11,12 +10,52 @@ const Hero = () => {
   };
 
   const handleDownloadResume = () => {
-    // Add your actual resume PDF URL here
-    const resumeUrl = "/path-to-your-resume.pdf";
+    // Create a simple resume content
+    const resumeContent = `
+HARIOM KUMAR
+Aspiring Software Engineer
+
+Contact Information:
+Email: mishrahariom1209@gmail.com
+Phone: +91 9798962474
+LinkedIn: linkedin.com/in/hariom-kumar-718426294
+
+Education:
+Bachelor of Computer Applications (BCA)
+Galgotias University - 2025
+
+Current Experience:
+Internship at QSpiders
+
+Technical Skills:
+Programming Languages: Java (85%), Python (80%), C++ (75%), C (70%)
+Web Technologies: JavaScript (80%), HTML/CSS (90%), PHP (75%), MySQL (70%)
+Other Tools: Microsoft Excel (85%), PowerPoint (80%), Word (85%)
+
+Projects:
+1. Book Store Management System
+   - Built using PHP, HTML/CSS, and MySQL
+   - Comprehensive web-based management system for book inventory
+
+2. Email Spam Detection
+   - Python-based application using NLTK and machine learning
+   - Intelligent email classification system
+
+Services:
+- Web Application Development
+- Python Data Applications
+- Frontend Interface Design
+    `.trim();
+
+    const blob = new Blob([resumeContent], { type: 'text/plain' });
+    const url = window.URL.createObjectURL(blob);
     const link = document.createElement('a');
-    link.href = resumeUrl;
-    link.download = 'Hariom_Kumar_Resume.pdf';
+    link.href = url;
+    link.download = 'Hariom_Kumar_Resume.txt';
+    document.body.appendChild(link);
     link.click();
+    document.body.removeChild(link);
+    window.URL.revokeObjectURL(url);
   };
 
   return (
