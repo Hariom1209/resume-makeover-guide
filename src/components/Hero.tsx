@@ -1,4 +1,3 @@
-
 import { ArrowDown, Github, Linkedin, Mail, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import jsPDF from 'jspdf';
@@ -19,41 +18,99 @@ const Hero = () => {
         format: 'a4'
       });
       
-      // Set font and add content
+      // Set font and add header
       pdf.setFont("helvetica", "bold");
-      pdf.setFontSize(20);
-      pdf.text("HARIOM KUMAR", 20, 30);
+      pdf.setFontSize(18);
+      pdf.text("Hariom Kumar", 105, 20, { align: 'center' });
       
       pdf.setFont("helvetica", "normal");
-      pdf.setFontSize(14);
-      pdf.text("Aspiring Software Engineer", 20, 45);
+      pdf.setFontSize(10);
+      pdf.text("Mayur Vihar (110091)", 20, 30);
+      pdf.text("mishrahariom1209@gmail.com", 105, 30, { align: 'center' });
+      pdf.text("+91 - 9798962474", 190, 30, { align: 'right' });
+      pdf.text("http://www.linkedin.com/in/hariom-kumar-718426294", 105, 35, { align: 'center' });
       
+      // Professional Summary
+      pdf.setFont("helvetica", "bold");
       pdf.setFontSize(12);
-      pdf.text("Contact Information:", 20, 65);
-      pdf.text("Email: mishrahariom1209@gmail.com", 20, 75);
-      pdf.text("Phone: +91 9798962474", 20, 85);
-      pdf.text("LinkedIn: linkedin.com/in/hariom-kumar-718426294", 20, 95);
+      pdf.text("Professional Summary", 20, 50);
       
-      pdf.text("Education:", 20, 115);
-      pdf.text("Bachelor of Computer Applications (BCA)", 20, 125);
-      pdf.text("Galgotias University - 2025", 20, 135);
+      pdf.setFont("helvetica", "normal");
+      pdf.setFontSize(9);
+      const summaryText = "Detail-oriented Computer Science undergraduate with hands-on experience in developing and implementing projects. Completed several online projects and internships, showcasing a strong aptitude for problem-solving and a passion for staying updated with emerging technologies.";
+      const summaryLines = pdf.splitTextToSize(summaryText, 170);
+      pdf.text(summaryLines, 20, 58);
       
-      pdf.text("Current Experience:", 20, 155);
-      pdf.text("Internship at QSpiders", 20, 165);
+      // Education
+      pdf.setFont("helvetica", "bold");
+      pdf.setFontSize(12);
+      pdf.text("Education", 20, 80);
       
-      pdf.text("Technical Skills:", 20, 185);
-      pdf.text("Programming Languages: Java (85%), Python (80%), C++ (75%), C (70%)", 20, 195);
-      pdf.text("Web Technologies: JavaScript (80%), HTML/CSS (90%), PHP (75%), MySQL (70%)", 20, 205);
-      pdf.text("Other Tools: Microsoft Excel (85%), PowerPoint (80%), Word (85%)", 20, 215);
+      pdf.setFont("helvetica", "normal");
+      pdf.setFontSize(9);
+      pdf.text("BCA Computer Science & Engineering", 20, 88);
+      pdf.text("2022-2025", 190, 88, { align: 'right' });
+      pdf.text("GALGOTIAS UNIVERSITY (CGPA-7.5/10)", 20, 94);
+      pdf.text("12th (PCM)", 20, 100);
+      pdf.text("M.B.D College, Darbhanga, Bihar (61%)", 20, 106);
+      pdf.text("10th BIHAR SCHOOL EDUCATION BOARD", 20, 112);
+      pdf.text("V Mishra High School, Darbhanga, Bihar (50%)", 20, 118);
       
-      pdf.text("Projects:", 20, 235);
-      pdf.text("1. Book Store Management System", 20, 245);
-      pdf.text("   - Built using PHP, HTML/CSS, and MySQL", 25, 255);
-      pdf.text("   - Comprehensive web-based management system for book inventory", 25, 265);
+      // Technical Skills
+      pdf.setFont("helvetica", "bold");
+      pdf.setFontSize(12);
+      pdf.text("Technical Skills", 20, 135);
       
-      pdf.text("2. Email Spam Detection", 20, 280);
-      pdf.text("   - Python-based application using NLTK and machine learning", 25, 290);
-      pdf.text("   - Intelligent email classification system", 25, 300);
+      pdf.setFont("helvetica", "normal");
+      pdf.setFontSize(9);
+      pdf.text("• Programming Languages - C, C++, Java, Python", 20, 143);
+      pdf.text("• Web Technologies - HTML, CSS, JavaScript, PHP, MySQL", 20, 149);
+      pdf.text("• Other - DBMS, Microsoft Excel, MS Word, PowerPoint, etc.", 20, 155);
+      
+      // Internships
+      pdf.setFont("helvetica", "bold");
+      pdf.setFontSize(12);
+      pdf.text("Internships", 20, 170);
+      
+      pdf.setFont("helvetica", "normal");
+      pdf.setFontSize(9);
+      pdf.text("Web Development Intern, OCTANET Service Pvt Ltd.", 20, 178);
+      pdf.text("July-Aug", 190, 178, { align: 'right' });
+      pdf.text("Worked on the front-end development.", 25, 184);
+      pdf.text("AICTE EDUSILKS Virtual Internship", 20, 190);
+      pdf.text("July-Sep", 190, 190, { align: 'right' });
+      pdf.text("Engaged in skill Development Workshop (Colours).", 25, 196);
+      pdf.text("OCTANET SERVICES PVT LTD", 20, 202);
+      pdf.text("Oct-Nov", 190, 202, { align: 'right' });
+      pdf.text("worked on the full-stack developer.", 25, 208);
+      
+      // Projects
+      pdf.setFont("helvetica", "bold");
+      pdf.setFontSize(12);
+      pdf.text("Projects", 20, 225);
+      
+      pdf.setFont("helvetica", "normal");
+      pdf.setFontSize(9);
+      pdf.text("Email Spam Detection", 20, 233);
+      pdf.text("As part of the BCA Research Project", 25, 239);
+      pdf.text("Bookstore management", 20, 245);
+      pdf.text("Project to create skills using HTML, CSS, JavaScript, PHP, MySQL", 25, 251);
+      
+      // Training and Certificates
+      pdf.setFont("helvetica", "bold");
+      pdf.setFontSize(12);
+      pdf.text("Training and Certificates", 20, 265);
+      
+      pdf.setFont("helvetica", "normal");
+      pdf.setFontSize(9);
+      pdf.text("12 weeks NPTEL (training and development) training & certification", 20, 273);
+      pdf.text("Jan-Apr2024", 175, 273);
+      pdf.text("AWS (Academy Cloud Foundations) certificate", 20, 279);
+      pdf.text("Apr2023", 180, 279);
+      pdf.text("ORACLE Academy final exam completion in Database programming with SQL", 20, 285);
+      pdf.text("Jan 2024", 180, 285);
+      pdf.text("CISCO (Networking Academy) Cybersecurity course Certificate", 20, 291);
+      pdf.text("Feb 2024", 180, 291);
       
       // Create blob and download link
       const pdfBlob = pdf.output('blob');
