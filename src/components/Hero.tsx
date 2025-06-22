@@ -66,53 +66,58 @@ const Hero = () => {
       pdf.text("• Programming Languages - C, C++, Java, Python", 20, 143);
       pdf.text("• Web Technologies - HTML, CSS, JavaScript, PHP, MySQL", 20, 149);
       pdf.text("• Other - DBMS, Microsoft Excel, MS Word, PowerPoint, etc.", 20, 155);
+      pdf.text("• Specialization - Developer", 20, 161);
       
       // Internships
       pdf.setFont("helvetica", "bold");
       pdf.setFontSize(12);
-      pdf.text("Internships", 20, 170);
+      pdf.text("Internships", 20, 175);
       
       pdf.setFont("helvetica", "normal");
       pdf.setFontSize(9);
-      pdf.text("Web Development Intern, OCTANET Service Pvt Ltd.", 20, 178);
-      pdf.text("July-Aug", 190, 178, { align: 'right' });
-      pdf.text("Worked on the front-end development.", 25, 184);
-      pdf.text("AICTE EDUSILKS Virtual Internship", 20, 190);
-      pdf.text("July-Sep", 190, 190, { align: 'right' });
-      pdf.text("Engaged in skill Development Workshop (Colours).", 25, 196);
-      pdf.text("OCTANET SERVICES PVT LTD", 20, 202);
-      pdf.text("Oct-Nov", 190, 202, { align: 'right' });
-      pdf.text("worked on the full-stack developer.", 25, 208);
+      pdf.text("Web Development Intern, OCTANET Service Pvt Ltd.", 20, 183);
+      pdf.text("July-Aug", 190, 183, { align: 'right' });
+      pdf.text("Worked on the front-end development.", 25, 189);
+      pdf.text("AICTE EDUSILKS Virtual Internship", 20, 195);
+      pdf.text("July-Sep", 190, 195, { align: 'right' });
+      pdf.text("Engaged in skill Development Workshop (Colours).", 25, 201);
+      pdf.text("OCTANET SERVICES PVT LTD", 20, 207);
+      pdf.text("Oct-Nov", 190, 207, { align: 'right' });
+      pdf.text("worked on the full-stack developer.", 25, 213);
       
       // Projects
       pdf.setFont("helvetica", "bold");
       pdf.setFontSize(12);
-      pdf.text("Projects", 20, 225);
+      pdf.text("Projects", 20, 230);
       
       pdf.setFont("helvetica", "normal");
       pdf.setFontSize(9);
-      pdf.text("Email Spam Detection", 20, 233);
-      pdf.text("As part of the BCA Research Project", 25, 239);
-      pdf.text("Bookstore management", 20, 245);
-      pdf.text("Project to create skills using HTML, CSS, JavaScript, PHP, MySQL", 25, 251);
+      pdf.text("Email Spam Detection", 20, 238);
+      pdf.text("As part of the BCA Research Project", 25, 244);
+      pdf.text("Bookstore management", 20, 250);
+      pdf.text("Project to create skills using HTML, CSS, JavaScript, PHP, MySQL", 25, 256);
       
       // Training and Certificates
       pdf.setFont("helvetica", "bold");
       pdf.setFontSize(12);
-      pdf.text("Training and Certificates", 20, 265);
+      pdf.text("Training and Certificates", 20, 270);
       
       pdf.setFont("helvetica", "normal");
       pdf.setFontSize(9);
-      pdf.text("12 weeks NPTEL (training and development) training & certification", 20, 273);
-      pdf.text("Jan-Apr2024", 175, 273);
-      pdf.text("AWS (Academy Cloud Foundations) certificate", 20, 279);
-      pdf.text("Apr2023", 180, 279);
-      pdf.text("ORACLE Academy final exam completion in Database programming with SQL", 20, 285);
-      pdf.text("Jan 2024", 180, 285);
-      pdf.text("CISCO (Networking Academy) Cybersecurity course Certificate", 20, 291);
-      pdf.text("Feb 2024", 180, 291);
+      pdf.text("12 weeks NPTEL (training and development) training & certification", 20, 278);
+      pdf.text("Jan-Apr2024", 175, 278);
+      pdf.text("AWS (Academy Cloud Foundations) certificate", 20, 284);
+      pdf.text("Apr2023", 180, 284);
+      pdf.text("ORACLE Academy final exam completion in Database programming with SQL", 20, 290);
+      pdf.text("Jan 2024", 180, 290);
+      pdf.text("CISCO (Networking Academy) Cybersecurity course Certificate", 20, 296);
+      pdf.text("Feb 2024", 180, 296);
       
-      // Create blob and download link
+      // Create filename with current date
+      const currentDate = new Date().toISOString().split('T')[0];
+      const filename = `Hariom_Kumar_Resume_${currentDate}.pdf`;
+      
+      // Save the PDF
       const pdfBlob = pdf.output('blob');
       const url = URL.createObjectURL(pdfBlob);
       const link = document.createElement('a');
