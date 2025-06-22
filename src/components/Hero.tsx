@@ -1,3 +1,4 @@
+
 import { ArrowDown, Github, Linkedin, Mail, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import jsPDF from 'jspdf';
@@ -53,7 +54,7 @@ const Hero = () => {
       pdf.text("GALGOTIAS UNIVERSITY (CGPA-7.5/10)", 20, 94);
       pdf.text("12th (PCM)", 20, 100);
       pdf.text("M.B.D College, Darbhanga, Bihar (61%)", 20, 106);
-      pdf.text("10th BIHAR SCHOOL EDUCATION BOARD", 20, 112);
+      pdf.text("10th", 20, 112);
       pdf.text("V Mishra High School, Darbhanga, Bihar (50%)", 20, 118);
       
       // Technical Skills
