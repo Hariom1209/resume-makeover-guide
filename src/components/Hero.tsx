@@ -19,115 +19,122 @@ const Hero = () => {
         format: 'a4'
       });
       
-      // Set font and add header
+      // Header with name and contact info
       pdf.setFont("helvetica", "bold");
-      pdf.setFontSize(18);
-      pdf.text("Hariom Kumar", 105, 20, { align: 'center' });
+      pdf.setFontSize(20);
+      pdf.text("HARIOM KUMAR", 20, 25);
       
       pdf.setFont("helvetica", "normal");
       pdf.setFontSize(10);
-      pdf.text("Mayur Vihar (110091)", 20, 30);
-      pdf.text("mishrahariom1209@gmail.com", 105, 30, { align: 'center' });
-      pdf.text("+91 - 9798962474", 190, 30, { align: 'right' });
-      pdf.text("http://www.linkedin.com/in/hariom-kumar-718426294", 105, 35, { align: 'center' });
+      pdf.text("Email ID: mishrahariom1209@gmail.com", 20, 32);
+      pdf.text("Mobile: +91-9798962474", 20, 37);
+      pdf.text("LinkedIn: http://www.linkedin.com/in/hariom-kumar", 20, 42);
       
-      // Professional Summary
+      // Objective Section
       pdf.setFont("helvetica", "bold");
       pdf.setFontSize(12);
-      pdf.text("Professional Summary", 20, 50);
+      pdf.text("OBJECTIVE", 20, 55);
+      
+      // Add border for objective section
+      pdf.rect(20, 48, 170, 25);
       
       pdf.setFont("helvetica", "normal");
       pdf.setFontSize(9);
-      const summaryText = "Detail-oriented Computer Science undergraduate with hands-on experience in developing and implementing projects. Completed several online projects and internships, showcasing a strong aptitude for problem-solving and a passion for staying updated with emerging technologies.";
-      const summaryLines = pdf.splitTextToSize(summaryText, 170);
-      pdf.text(summaryLines, 20, 58);
+      const objectiveText = "Constantly seeking to apply my knowledge to learn something useful and keep challenging myself to be a better performer per the company's requirements. Good and quick learner, team player, loves to learn new things, flexible with different technologies.";
+      const objectiveLines = pdf.splitTextToSize(objectiveText, 160);
+      pdf.text(objectiveLines, 25, 60);
       
-      // Education
+      // Skills Section
       pdf.setFont("helvetica", "bold");
       pdf.setFontSize(12);
-      pdf.text("Education", 20, 80);
+      pdf.text("SKILLS", 20, 88);
+      
+      // Add border for skills section
+      pdf.rect(20, 81, 170, 35);
       
       pdf.setFont("helvetica", "normal");
       pdf.setFontSize(9);
-      pdf.text("BCA Computer Science & Engineering", 20, 88);
-      pdf.text("2022-2025", 190, 88, { align: 'right' });
-      pdf.text("GALGOTIAS UNIVERSITY (CGPA-7.5/10)", 20, 94);
-      pdf.text("12th (PCM)", 20, 100);
-      pdf.text("M.B.D College, Darbhanga, Bihar (61%)", 20, 106);
-      pdf.text("10th", 20, 112);
-      pdf.text("V Mishra High School, Darbhanga, Bihar (50%)", 20, 118);
+      pdf.text("• Languages: C++, Java, SQL, Web technology, C, Python.", 25, 95);
+      pdf.text("• Developer Tools: VS Code, GitHub, Online compiler", 25, 101);
+      pdf.text("• Technologies/Frameworks: NodeJS, Express JS, Git, MongoDB", 25, 107);
       
-      // Technical Skills
+      // Education Section
       pdf.setFont("helvetica", "bold");
       pdf.setFontSize(12);
-      pdf.text("Technical Skills", 20, 135);
+      pdf.text("EDUCATION", 20, 130);
+      
+      // Add border for education section
+      pdf.rect(20, 123, 170, 40);
       
       pdf.setFont("helvetica", "normal");
       pdf.setFontSize(9);
-      pdf.text("• Programming Languages - C, C++, Java, Python", 20, 143);
-      pdf.text("• Web Technologies - HTML, CSS, JavaScript, PHP, MySQL", 20, 149);
-      pdf.text("• Other - DBMS, Microsoft Excel, MS Word, PowerPoint, etc.", 20, 155);
-      pdf.text("• Specialization - Developer", 20, 161);
+      pdf.text("GALGOTIAS UNIVERSITY (2022-2025)", 25, 140);
+      pdf.text("BCA– CGPA – 7.5", 25, 146);
+      pdf.text("12 (Senior Secondary Examination) (2022)", 25, 152);
+      pdf.text("10th (Secondary Examination) 2019", 25, 158);
       
-      // Internships
+      // Trainings or Certifications Section
       pdf.setFont("helvetica", "bold");
       pdf.setFontSize(12);
-      pdf.text("Internships", 20, 175);
+      pdf.text("TRAININGS OR CERTIFICATIONS", 20, 180);
+      
+      // Add border for certifications section
+      pdf.rect(20, 173, 170, 35);
       
       pdf.setFont("helvetica", "normal");
       pdf.setFontSize(9);
-      pdf.text("Web Development Intern, OCTANET Service Pvt Ltd.", 20, 183);
-      pdf.text("July-Aug", 190, 183, { align: 'right' });
-      pdf.text("Worked on the front-end development.", 25, 189);
-      pdf.text("AICTE EDUSILKS Virtual Internship", 20, 195);
-      pdf.text("July-Sep", 190, 195, { align: 'right' });
-      pdf.text("Engaged in skill Development Workshop (Colours).", 25, 201);
-      pdf.text("OCTANET SERVICES PVT LTD", 20, 207);
-      pdf.text("Oct-Nov", 190, 207, { align: 'right' });
-      pdf.text("worked on the full-stack developer.", 25, 213);
+      pdf.text("• ORACLE Academy final exam completion in Database programming with SQL", 25, 185);
+      pdf.text("• AWS (Academy Cloud Foundations) certificate", 25, 191);
+      pdf.text("• 12 weeks of NPTEL (training and development) training & certification", 25, 197);
+      pdf.text("• CISCO (Networking Academy) Cybersecurity course Certificate", 25, 203);
       
-      // Projects
+      // Projects Section
       pdf.setFont("helvetica", "bold");
       pdf.setFontSize(12);
-      pdf.text("Projects", 20, 230);
+      pdf.text("PROJECTS", 20, 220);
+      
+      // Add border for projects section
+      pdf.rect(20, 213, 170, 25);
       
       pdf.setFont("helvetica", "normal");
       pdf.setFontSize(9);
-      pdf.text("Email Spam Detection", 20, 238);
-      pdf.text("As part of the BCA Research Project", 25, 244);
-      pdf.text("Bookstore management", 20, 250);
-      pdf.text("Project to create skills using HTML, CSS, JavaScript, PHP, MySQL", 25, 256);
+      pdf.text("• Book store management using web technology, MYSQL, Python.", 25, 227);
+      pdf.text("• Email Spam Detection using Python, ML.", 25, 233);
       
-      // Training and Certificates
+      // Achievements Section
       pdf.setFont("helvetica", "bold");
       pdf.setFontSize(12);
-      pdf.text("Training and Certificates", 20, 270);
+      pdf.text("ACHIEVEMENTS", 20, 250);
+      
+      // Add border for achievements section
+      pdf.rect(20, 243, 170, 35);
       
       pdf.setFont("helvetica", "normal");
       pdf.setFontSize(9);
-      pdf.text("12 weeks NPTEL (training and development) training & certification", 20, 278);
-      pdf.text("Jan-Apr2024", 175, 278);
-      pdf.text("AWS (Academy Cloud Foundations) certificate", 20, 284);
-      pdf.text("Apr2023", 180, 284);
-      pdf.text("ORACLE Academy final exam completion in Database programming with SQL", 20, 290);
-      pdf.text("Jan 2024", 180, 290);
-      pdf.text("CISCO (Networking Academy) Cybersecurity course Certificate", 20, 296);
-      pdf.text("Feb 2024", 180, 296);
+      pdf.text("• Received Certificate of Merit, secured 3rd position at District level in Talent Search", 25, 257);
+      pdf.text("  Expedition from M B D College, Darbhanga, Bihar.", 27, 263);
+      pdf.text("• Attended various webinars on college, etc.", 25, 269);
+      pdf.text("• Solved many coding questions on various platforms.", 25, 275);
+      
+      // Address Section
+      pdf.setFont("helvetica", "bold");
+      pdf.setFontSize(12);
+      pdf.text("ADDRESS", 20, 290);
+      
+      // Add border for address section
+      pdf.rect(20, 283, 170, 20);
+      
+      pdf.setFont("helvetica", "normal");
+      pdf.setFontSize(9);
+      pdf.text("• Permanent address: Darbhanga, Bihar, India.", 25, 297);
+      pdf.text("• Current address: Greater Noida.", 25, 303);
       
       // Create filename with current date
       const currentDate = new Date().toISOString().split('T')[0];
       const filename = `Hariom_Kumar_Resume_${currentDate}.pdf`;
       
       // Save the PDF
-      const pdfBlob = pdf.output('blob');
-      const url = URL.createObjectURL(pdfBlob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = 'Hariom_Kumar_Resume.pdf';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      URL.revokeObjectURL(url);
+      pdf.save(filename);
       
       console.log('PDF downloaded successfully');
     } catch (error) {
