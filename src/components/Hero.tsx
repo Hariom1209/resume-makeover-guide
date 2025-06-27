@@ -1,4 +1,3 @@
-
 import { ArrowDown, Github, Linkedin, Mail, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import jsPDF from 'jspdf';
@@ -184,8 +183,8 @@ const Hero = () => {
               <div className="text-muted-foreground">Degree</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-primary">QSpiders</div>
-              <div className="text-muted-foreground">Internship</div>
+              <div className="text-2xl font-bold text-primary">Developer</div>
+              <div className="text-muted-foreground">Specialization</div>
             </div>
           </div>
           
